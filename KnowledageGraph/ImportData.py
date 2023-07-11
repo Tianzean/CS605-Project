@@ -15,7 +15,7 @@ def import_data():
             "CALL apoc.load.json('https://en.wikipedia.org/w/api.php?format=json&action=query&list=categorymembers&cmtype=subcat&cmtitle=Category:' + replace(c.catName,' ', '%20 ') + '&cmprop=ids|title&cmlimit=500') "
             "YIELD value AS results "
             "UNWIND results.query.categorymembers AS subcat "
-            "MERGE (sc:Category:Level9Category {catId: subcat.pageid}) "
+            "MERGE (sc:Category:Level1Category {catId: subcat.pageid}) "
             "ON CREATE SET sc.catName = substring(subcat.title, 9), sc.fetched = false "
             "MERGE (c)-[:has_subclass]->(sc) "
             "WITH DISTINCT c "
