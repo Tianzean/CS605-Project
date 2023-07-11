@@ -19,6 +19,13 @@ $ password = "abc123"  # Replace with your Neo4j password
 ```
 7. Run CreateNode.py, CreateCatid.py and ImportData.py in sequence
 
+# Execution
+1. Firstly, running CreateNode.py
+2. Secondly, running CreateCatid.py to create the index.
+3. After that, running importData.py and pay attention to "sc:Category:Level1Category" in the line 18
+4. After Level1Category, modifying "sc:Category:Level1Category" into "sc:Category:Level2Category" and running importData.py
+5. And so on, getting the diagram in the Neo4j database
+
 # Languages & tools
 1. Python
 2. Neo4j
